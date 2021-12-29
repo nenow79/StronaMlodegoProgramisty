@@ -1,3 +1,4 @@
+# this is the main app file
 from flask import Flask,url_for,render_template, redirect, request,flash, g
 import sqlite3
 from functions import *
