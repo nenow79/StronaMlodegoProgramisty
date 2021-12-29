@@ -5,7 +5,8 @@ from functions import *
 
 
 app_info = {
-    'db_file':'/home/nenow79/1_MyScripts/flask/StronaMlodegoProgramisty/data/smp.db'
+    #'db_file':'/home/nenow79/1_MyScripts/flask/StronaMlodegoProgramisty/data/smp.db'
+    'db_file':r'C:\Users\pawel\Desktop\1_My_scripts\StronaMlodegoProgramisty\data\smp.db'
 }
 
 
@@ -92,24 +93,21 @@ def kuchnia_admin():
         return redirect(url_for('edytuj_przepis',ID=request.form['id_przepisu']))
     return render_template('kuchnia_admin.html')
 
-@app.route('/kuchnia/edytuj_przepis/<ID>')
+@app.route('/kuchnia/edytuj_przepis/<ID>',methods=['GET','POST'])
 def edytuj_przepis(ID):
     db = get_db()
     if request.method == 'POST':
-        sql_command = 'insert into przepisy2(name, skladniki, przepis, autor) values(?, ?, ?, ?)'
+        sql_command = 'UPDATE przepisy2 SET name=?, skladniki=?, przepis=?, autor=? where id=?'
         nazwa_przepisu = request.form['nazwa_przepisu']
         skladniki_przepisu = request.form['skladniki_przepisu']
         tresc_przepisu = request.form['tresc_przepisu']
         autor_przepisu = request.form['autor_przepisu']
-        db.execute(sql_command, [nazwa_przepisu, skladniki_przepisu, tresc_przepisu, autor_przepisu])
+        db.execute(sql_command, [nazwa_przepisu, skladniki_przepisu, tresc_przepisu, autor_przepisu, ID])
         db.commit()
-
+        return redirect(url_for('kuchnia'))
 
     sql_command = 'SELECT * FROM przepisy2 WHERE id =?;'
     cur = db.execute(sql_command,[ID])
     przepis = cur.fetchone()
-    if przepis:
-        print(przepis['przepis'],przepis['autor'],przepis['skladniki'],sep='\n')
-    else:
-        print('uuups',przepis)
+
     return render_template('edytuj_przepis.html',przepis=przepis)

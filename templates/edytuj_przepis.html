@@ -13,7 +13,7 @@ Edytuj przepis
 
 {% endblock %}
 {% block content %}
-<form class="row g-3" id="nowy_przepis" method="POST" action="{{ url_for('edytuj_przepis',ID=przepis[id]) }}">
+<form class="row g-3" id="nowy_przepis" method="POST" action="{{ url_for('edytuj_przepis',ID=przepis['id'])}}">
 
     <div class="mb-3">
         <label for="nazwa_przepisu" class="form-label">Nazwa przepisu</label>
