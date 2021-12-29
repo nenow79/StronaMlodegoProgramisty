@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+Mlody Pythonista
+{% endblock %}
+
+{% block header %}
+Wybierz przepis
+{% endblock %}
+
+
+{% block subtitle %} 
+
+{% endblock %}
+{% block content %}
+<form class="row g-3" id="kuchnia_admin" method="POST" action="{{ url_for('kuchnia_admin') }}">
+
+    <div class="mb-3">
+        <label for="id_przepisu" class="form-label">ID</label>
+        <input type="text" class="form-control" name="id_przepisu" id="id_przepisu" >
+    </div>
+    <div class="mb-3">
+        <label for="akcja" class="form-label">Akcja</label>
+        <input type="text" class="form-control" name="akcja" id="akcja" >
+    </div>
+  <div class="row g-3">
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+{% endblock %}

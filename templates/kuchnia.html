@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+Mlody Pythonista
+{% endblock %}
+
+{% block header %}
+Sekcja Kulinarna
+{% endblock %}
+
+{% block subtitle %} 
+{% endblock %}
+
+{% block content %}
+<img src="{{ url_for('static',filename='kuchareczka.jpeg')}}">
+kekcja kulinarna poświęcona specjałom kotki psotki :)
+<br><br><br><br>
+<a class="btn btn-secondary" href="{{url_for('nowy_przepis')}}" role="button">Dodaj nowy przepis</a>
+<br><br>
+<div class="accordion" id="accordionExample">
+{% for p in przepisy %}
+  <div class="accordion-item">
+      <h2 class="accordion-header" id="heading{{p.id}}">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{p.id}}" aria-expanded="false" aria-controls="collapse{{p.id}}">
+              {{p.name}} | {{p.autor}} | {{p.mod_date}}
+      </button>
+    </h2>
+    <div id="collapse{{p.id}}" class="accordion-collapse collapse show" aria-labelledby="heading{{p.id}}" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+          <b>Składniki:</b><br>
+          {{p.skladniki}}<br>
+        <br><b>Przepis:</b><br>
+        {{p.przepis}}
+        <br><br>ID:{{p.id}}
+      </div>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}
+
+

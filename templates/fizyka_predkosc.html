@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}
+Mlody Pythonista
+{% endblock %}
+
+{% block header %}
+Liczymy prędkość w ruchu jednostajnym!
+{% endblock %}
+
+
+{% block subtitle %} 
+
+{% endblock %}
+{% block content %}
+<form class="row g-3" id="fizyka_predkosc" method="POST" action="{{ url_for('fizyka_predkosc') }}">
+  <div class="col">
+    <input type="text" name="droga" id="droga" class="form-control" placeholder="droga" aria-label="droga">
+    </div>
+  <div class="col">
+    <select id="droga_unit" name="droga_unit" class="form-select" aria-label="Default select example">
+        <option selected>Jednostka drogi</option>    
+        <option value="km">km</option>
+        <option value="m">m</option>
+    </select>
+  </div>
+  <div class="col">
+    <input type="text" name="czas" id="czas" class="form-control" placeholder="czas" aria-label="czas">
+  </div>
+  <div class="col">
+    <select id="czas_unit" name="czas_unit" class="form-select" aria-label="czas unit">
+        <option selected>Jednostka czasu</option>    
+        <option value="h">h</option>
+        <option value="min">min</option>
+        <option value="s">s</option>
+    </select>
+  </div>
+  <div class="col">
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+{% endblock %}
