@@ -8,12 +8,17 @@ Mlody Pythonista
 Liczymy prędkość w ruchu jednostajnym!
 {% endblock %}
 
-
 {% block subtitle %} 
-
+Kalkulator służy do obliczania prędkości. Np. jak szybko biegłeś na 400 m. <br><b>Uwaga:</b> gijeżeli wpisujesz wartości po przecinku, użyj kropki
 {% endblock %}
+
+{% block header_picture %}
+<img src="{{ url_for('static',filename='biegacz.jpg')}}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" loading="lazy" width="200" height="200">
+{% endblock %}
+
 {% block content %}
 <form class="row g-3" id="fizyka_predkosc" method="POST" action="{{ url_for('fizyka_predkosc') }}">
+    <div class="row g-3">
   <div class="col">
     <input type="text" name="droga" id="droga" class="form-control" placeholder="droga" aria-label="droga">
     </div>
@@ -24,6 +29,9 @@ Liczymy prędkość w ruchu jednostajnym!
         <option value="m">m</option>
     </select>
   </div>
+    </div>
+    <br><br><br>
+    <div class="row g-3">
   <div class="col">
     <input type="text" name="czas" id="czas" class="form-control" placeholder="czas" aria-label="czas">
   </div>
@@ -35,7 +43,9 @@ Liczymy prędkość w ruchu jednostajnym!
         <option value="s">s</option>
     </select>
   </div>
-  <div class="col">
+  </div>
+    <br><br><br>
+  <div class="row g-3">
   <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>

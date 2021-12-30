@@ -5,14 +5,22 @@ Mlody Pythonista
 {% endblock %}
 
 {% block header %}
-Strona młodego pythonisty
+Strona młodego programisty - pythonisty
 {% endblock %}
 
-{% block subtitle %} 
+{% block subtitle %}
+Strona którą zrobiłem żeby pokazać synowi Błażejowi możliwości pythona, biblioteki flask oraz podstawy html i bootstrap.
+{% endblock %}
+
+{% block header_picture %}
+<img src="{{ url_for('static',filename='intro.jpeg')}}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" loading="lazy" width="600" height="400">
 {% endblock %}
 
 {% block content %}
-<img src="{{ url_for('static',filename='intro.jpeg')}}"><br><br>
-Strona którą zrobiłem żeby pokazać synowi Błażejowi możliwości pythona i biblioteki flask oraz podstawy html.
+<br>
+2021.12.27 - dodano sekcję kuchnia<br>
+2021.12.30 - nowy wygląd<br>
+
+
 {% endblock %}
 

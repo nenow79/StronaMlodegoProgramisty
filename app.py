@@ -29,9 +29,9 @@ def close_db(error):
     if hasattr(g, 'sqlite_db'):
         g.sqlite_db.close()
 #################################
-@app.route('/fizyka')
+@app.route('/informatyka')
 def fizyka():
-    return render_template('fizyka.html')
+    return render_template('informatyka.html')
 
 @app.route('/fizyka/predkosc',methods=['GET','POST'])
 def fizyka_predkosc():
