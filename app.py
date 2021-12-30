@@ -58,6 +58,18 @@ def fizyka_predkosc():
         predkosc = oblicz_predkosc(droga,droga_unit,czas,czas_unit)
         return render_template('fizyka_predkosc_results.html',droga_unit=droga_unit,droga=droga,czas_unit=czas_unit,czas=czas,predkosc=predkosc)
 
+@app.route('/tata/procent_alk',methods=['GET','POST'])
+def procent_alk():
+    if request.method == 'GET':
+        return render_template('tata_procent_alk.html')
+    else:
+        obj_1 = float(request.form['obj_1']) if request.form['obj_1_unit'] == 'l' else float(request.form['obj_1']) / 1000
+        obj_2 = float(request.form['obj_2']) if request.form['obj_2_unit'] == 'l' else float(request.form['obj_2']) / 1000
+        r = Roztwor_alkoholu(obj_1, request.form['alk_1'], obj_2, request.form['alk_2'],)
+        print(r.roztwor())
+        return render_template('tata_procent_alk_result.html',r=r)
+
+
 ########################################
 @app.route('/kuchnia',methods=['GET','POST'])
 def kuchnia():

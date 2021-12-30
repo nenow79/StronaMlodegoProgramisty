@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}
+Mlody Pythonista
+{% endblock %}
+
+{% block header %}
+Liczymy stężenie alkoholu w cieczy
+{% endblock %}
+
+{% block subtitle %} 
+Kalkulator służy do obliczania stężenia alkoholu w roztworze. Np. co się stanie jak do piwa dolejesz kieliszek wódki :). <br><b>Uwaga:</b> gijeżeli wpisujesz wartości po przecinku, użyj kropki
+{% endblock %}
+
+{% block header_picture %}
+<img src="{{ url_for('static',filename='alkohol.jpg')}}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" loading="lazy" width="100" height="100">
+{% endblock %}
+
+{% block content %}
+<form class="row g-3" id="procent_alk" method="POST" action="{{ url_for('procent_alk') }}">
+    <div class="row g-3">
+  <div class="col">
+    <input type="text" name="obj_1" id="obj_1" class="form-control" placeholder="Objętość pierwszego roztworu" aria-label="obj_1">
+    </div>
+  <div class="col">
+    <select id="obj_1_unit" name="obj_1_unit" class="form-select" aria-label="Default select example">
+        <option selected>Jednostka objętości</option>
+        <option value="l">litr</option>
+        <option value="ml">mili litr</option>
+    </select>
+
+  </div>
+        <div class="col">
+            <input type="text" name="alk_1" id="alk_1" class="form-control" placeholder="Zawartość alkoholu w % (bez znaku %)" aria-label="alk_1">
+        </div>
+    </div>
+    <br><br><br>
+    <div class="row g-3">
+  <div class="col">
+    <input type="text" name="obj_2" id="obj_2" class="form-control" placeholder="Objętość drugiego roztworu" aria-label="obj_2">
+    </div>
+  <div class="col">
+    <select id="obj_2_unit" name="obj_2_unit" class="form-select" aria-label="Default select example">
+        <option selected>Jednostka objętości</option>
+        <option value="l">litr</option>
+        <option value="ml">mili litr</option>
+    </select>
+
+  </div>
+        <div class="col">
+            <input type="text" name="alk_2" id="alk_2" class="form-control" placeholder="Zawartość alkoholu w % (bez znaku %)" aria-label="alk_2">
+        </div>
+    </div>
+    <br><br><br>
+  <div class="row g-3">
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+{% endblock %}

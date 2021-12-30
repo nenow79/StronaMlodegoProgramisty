@@ -4,4 +4,19 @@ def oblicz_predkosc(droga,droga_unit,czas,czas_unit):
     t=float(czas)*unit_dic[czas_unit]
     return round(s/t,3)
 
+class Roztwor_alkoholu():
+    def __init__(self,obj_1,alk_1,obj_2,alk_2):
+        self.obj_1 = float(obj_1)
+        self.alk_1 = float(alk_1)
+        self.obj_2 = float(obj_2)
+        self.alk_2 = float(alk_2)
+
+    def roztwor(self):
+        wynik = (self.obj_1*self.alk_1/100 + self.obj_2*self.alk_2/100)/(self.obj_1+self.obj_2)
+        return round(wynik*100,1)
+
+if __name__=='__main__':
+    r = Roztwor_alkoholu(0.5,5,0.05,40)
+    print(r.roztwor())
+
 
