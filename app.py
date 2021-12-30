@@ -69,6 +69,13 @@ def procent_alk():
         print(r.roztwor())
         return render_template('tata_procent_alk_result.html',r=r)
 
+@app.route('/tata/wino_cukier',methods=['GET','POST'])
+def wino_cukier():
+    if request.method == 'GET':
+        return render_template('tata_wino_cukier.html')
+    else:
+        pass
+
 
 ########################################
 @app.route('/kuchnia',methods=['GET','POST'])

@@ -15,8 +15,15 @@ class Roztwor_alkoholu():
         wynik = (self.obj_1*self.alk_1/100 + self.obj_2*self.alk_2/100)/(self.obj_1+self.obj_2)
         return round(wynik*100,1)
 
+
+class Wino_cukier():
+    def __init__(self,obj,alk):
+        self.obj = float(obj)
+        self.alk = float(alk)
+
+    def cukier(self):
+        return 17*self.obj*self.alk
+
 if __name__=='__main__':
-    r = Roztwor_alkoholu(0.5,5,0.05,40)
-    print(r.roztwor())
-
-
+    w = Wino_cukier(30,17)
+    print(w.cukier())
