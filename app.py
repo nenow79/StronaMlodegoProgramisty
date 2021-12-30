@@ -5,8 +5,8 @@ from functions import *
 
 
 app_info = {
-    #'db_file':'/home/nenow79/1_MyScripts/flask/StronaMlodegoProgramisty/data/smp.db'
-    'db_file':r'C:\Users\pawel\Desktop\1_My_scripts\StronaMlodegoProgramisty\data\smp.db'
+    'db_file':'/home/nenow79/1_MyScripts/flask/StronaMlodegoProgramisty/data/smp.db'
+    #'db_file':r'C:\Users\pawel\Desktop\1_My_scripts\StronaMlodegoProgramisty\data\smp.db'
 }
 
 
@@ -74,7 +74,11 @@ def wino_cukier():
     if request.method == 'GET':
         return render_template('tata_wino_cukier.html')
     else:
-        pass
+        print(request.form)
+        obj = request.form['obj']
+        alk = request.form['alk']
+        w = Wino_cukier(obj,alk)
+        return render_template('tata_wino_cukier_result.html',w=w)
 
 
 ########################################
