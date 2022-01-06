@@ -5,7 +5,8 @@ from functions import *
 
 
 app_info = {
-    'db_file':'/home/nenow79/1_MyScripts/flask/StronaMlodegoProgramisty/data/smp.db'
+    'db_file':'/home/nenow/1_web_apps/StronaMlodegoProgramisty/data/smp.db'
+    #'db_file':'/home/nenow79/1_MyScripts/flask/StronaMlodegoProgramisty/data/smp.db'
     #'db_file':r'C:\Users\pawel\Desktop\1_My_scripts\StronaMlodegoProgramisty\data\smp.db'
 }
 
