@@ -29,7 +29,7 @@ def get_db():
 def close_db(error):
     if hasattr(g, 'sqlite_db'):
         g.sqlite_db.close()
-#################################
+##################################
 @app.route('/informatyka')
 def fizyka():
     return render_template('informatyka.html')
