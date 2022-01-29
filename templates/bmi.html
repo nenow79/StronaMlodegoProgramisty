@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}
+Mlody Pythonista
+{% endblock %}
+
+{% block header %}
+BMI
+{% endblock %}
+
+{% block subtitle %} 
+Kalkulator służy do obliczania BMI. <br>(Moj pierwszy napisany w JavaScript)
+{% endblock %}
+
+{% block header_picture %}
+
+{% endblock %}
+
+{% block content %}
+
+<script>
+    function myFunction() {
+        var waga = document.getElementById('waga').value;
+        var wzrost = document.getElementById('wzrost').value/100;
+        var bmi = (waga/(wzrost*wzrost)).toFixed(1);
+        document.getElementById("myOutput").innerHTML = bmi;
+        var judge = '';
+        if ((bmi >= 18.5) && (bmi <= 24.9)) {
+            judge = "Waga prawidowa!";
+        } else if (bmi <= 18.4){
+            judge = "Niedowaga";
+        }else if ((bmi >= 25) && (bmi <= 29.9)){
+            judge = "Nadwaga!";
+        } else if ((bmi >= 30) && (bmi <= 34.9)){
+            judge = "Otylosc I stopnia";
+        } else if (bmi >= 35){
+            judge = "Otylosc II lub III stopnia";
+        }else {
+            var judge = ''
+        }
+        
+        document.getElementById("myOutput2").innerHTML = judge;
+    }
+</script>
+
+<body>
+    <br>
+    <p>Place data below</p>
+    <hr>
+    <!-- variables -->
+    <label for="waga">Waga w kg:</label><br>
+    <input type="text" name="waga" id="waga">
+    <br>
+    <label for="wzrost">Wzrost w cm:</label><br>
+    <input type="text" name="wzrost" id="wzrost">
+    <br><br><br>
+    <button type="button" onclick="myFunction()">Calc</button>
+    <br>
+    <hr>
+    <p></p>
+    <p id="myOutput"></p><br>
+    <p id="myOutput2"></p>
+</body>
+{% endblock %}

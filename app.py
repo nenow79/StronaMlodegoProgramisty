@@ -81,6 +81,10 @@ def wino_cukier():
         w = Wino_cukier(obj,alk)
         return render_template('tata_wino_cukier_result.html',w=w)
 
+@app.route('/lifestyle/bmi')
+def bmi():
+    return render_template('bmi.html')
+
 
 ########################################
 @app.route('/kuchnia',methods=['GET','POST'])
