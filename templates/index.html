@@ -4,6 +4,14 @@
 Mlody Pythonista
 {% endblock %}
 
+{% block before_header %} 
+<div id="myBar">
+    <p id="demo"></p>
+</div>
+<script src="{{url_for('static', filename='count_down.js')}}"></script>
+<br><br>
+{% endblock %}  
+
 {% block header %}
 Strona młodego programisty - pythonisty
 {% endblock %}
@@ -18,17 +26,11 @@ Strona którą zrobiłem żeby pokazać synowi Błażejowi możliwości pythona,
 
 {% block content %}
 
-<div id="myBar">
-    <p id="demo"></p>
-</div>
-
-
-<script src="{{url_for('static', filename='count_down.js')}}"></script>
-
 <br>
 2021.12.27 - dodano sekcję kuchnia<br>
 2021.12.30 - nowy wygląd<br>
 2022.01.29 - Kalkulator BMI w technlogi JavaScript<br>
+2022.01.30 - Ile czasu zostlo do egzaminu
 
 
 {% endblock %}

@@ -14,7 +14,7 @@
           color:white;  
           background-color:rgb(243, 209, 16);  
           padding:5px;
-          font-size: 40px;
+          font-size: 32px;
           font-weight: bold;
         }
 
@@ -34,6 +34,7 @@
 
     <div class="container">
         <div class="px-4 pt-5 my-5 text-center border-bottom">
+          {% block before_header %} {% endblock %}      
     <h1 class="display-4 fw-bold">{% block header %} {% endblock %}</h1>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">{% block subtitle %} {% endblock %}</p>
